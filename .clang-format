@@ -1,0 +1,197 @@
+#===========================================================================#
+# Language (C/C++)                                                          #
+#===========================================================================#
+Language: Cpp
+
+
+
+#===========================================================================#
+# Alignment and wrapping                                                    #
+#===========================================================================#
+
+# Maximum columns count
+ColumnLimit: 120
+
+# Column limit wrapping for comments
+ReflowComments: true
+
+# Prevent alignment of wrapped names to avoid misplaced spaces
+AlignAfterOpenBracket: BlockIndent
+IndentWrappedFunctionNames: false
+BinPackArguments: false
+BinPackParameters: false
+AlignOperands: AlignAfterOperator
+
+# Brace wrapping
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterCaseLabel: false
+    AfterControlStatement: MultiLine
+    AfterEnum: false
+    AfterFunction: true
+    AfterNamespace: true
+    AfterStruct: false
+    AfterUnion: false
+    AfterExternBlock: true
+    BeforeCatch: false
+    BeforeElse: false
+    IndentBraces: false
+    SplitEmptyFunction: true
+    SplitEmptyRecord: true
+    SplitEmptyNamespace: true
+
+# Don't break after return type
+AlwaysBreakAfterReturnType: None
+
+
+
+#===========================================================================#
+# Indentation and spaces                                                    #
+#===========================================================================#
+
+# Indent width and indent character
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 4
+UseTab: Never
+
+# Preprocessor
+IndentPPDirectives: BeforeHash
+
+# Declarations and assignments
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+
+# Disable spaces after '{' and before '}' in lists
+Cpp11BracedListStyle: true
+
+# Place '*' and '&' next to the name of the variable
+PointerAlignment: Right
+
+# Space after a cast, but not in its parentheses
+SpacesInCStyleCastParentheses: false
+SpaceAfterCStyleCast: true
+
+# Space after logical not '!' (it's an unary operator)
+SpaceAfterLogicalNot: false
+
+# Space before assignment operators '=', '+=', '|=', etc...
+SpaceBeforeAssignmentOperators: true
+
+# Space before control statement parentheses, but not function parentheses
+SpaceBeforeParens: ControlStatements
+
+# No space in empty blocks '{}' or parentheses '()'
+SpaceInEmptyBlock: false
+SpaceInEmptyParentheses: false
+
+# No space between angles '<>'
+SpacesInAngles: Never
+
+# No space in parentheses -- after '(' and before ')'
+SpacesInParentheses: false
+
+# No space inb square brackets -- after '[' and before ']'
+SpacesInSquareBrackets: false
+
+# No space in container literals
+# var a = [1, 2, 3] (<- betweebn square brackets and values)
+# f({a: 1, b: 2, c: 3}) (<- before ':' caracter)
+SpacesInContainerLiterals: false
+
+# Space after "template" keyword
+SpaceAfterTemplateKeyword: true
+
+# Cases in a switch statement
+IndentCaseLabels: true
+
+# Nested namespace indentation
+NamespaceIndentation: All
+
+
+
+
+#===========================================================================#
+# Layout inside a function's scope                                          #
+#===========================================================================#
+
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Always
+AllowShortCaseLabelsOnASingleLine: true
+
+# Remove empty line in blocks
+KeepEmptyLinesAtTheStartOfBlocks: false
+
+
+
+
+#===========================================================================#
+# Global scope                                                              #
+#===========================================================================#
+
+# Max empty lines to keep
+MaxEmptyLinesToKeep: 1
+
+
+
+
+#===========================================================================#
+# Readability improvements and extras                                       #
+#===========================================================================#
+# Include sorting and priority - lowest priority gets sorted at the bottom of the list
+SortIncludes: CaseInsensitive
+IncludeBlocks: Preserve
+IncludeCategories:
+  - Regex:           '^"[[:alnum:]./]+"'     # Any "my_header.h"
+    Priority:        4
+  - Regex:           '<criterion/[a-z]+\.h>' # Criterion headers
+    Priority:        3
+  - Regex:           '<[[:alnum:]./]+>'      # System/Standard (C)
+    Priority:        2
+  - Regex:           '<[[:alnum:]]+>'        # System/Standard (C++)
+    Priority:        1
+
+
+# Keep operation chains either broken down or single line,
+# depending on how *you* make it
+# Experimental so might change/disappear any time. Keep an eye on it.
+ExperimentalAutoDetectBinPacking: true
+
+# Force emtpy lines between definition blocks
+SeparateDefinitionBlocks: Always
+
+# Align initialiser non-class list elements
+AlignArrayOfStructures: Left
+
+# Make macro declarations more legible.
+AlignConsecutiveMacros: Consecutive
+
+# Align backslashes when escaping linebreaks
+AlignEscapedNewlines: Left
+
+# Align trailing comments (//)
+AlignTrailingComments: true
+
+# Allow breaking string litterals when wrapping
+BreakStringLiterals: true
+
+# When wrapping, keep '=' on the top right, but put operators on the new line
+BreakBeforeBinaryOperators: NonAssignment
+
+# Align ? and : right sides in ternaries
+BreakBeforeTernaryOperators: true
+
+# Avoid parenthesis redundancy
+RemoveParentheses: "MultipleParentheses"
+
+# Sort 'using' declarations
+SortUsingDeclarations: true
+
+# Disable automatic insertion of comments at the end of namespaces
+FixNamespaceComments: false
+
+# How list initialisers going over the column limit should be aligned
+PackConstructorInitializers: NextLine
