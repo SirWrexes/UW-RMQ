@@ -116,7 +116,9 @@ set(CMAKE_BUILD_TYPE Debug)
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
   message(WARNING "Debug flags activated.")
   list(APPEND _CMPL_FLAGS -g)
-  list(APPEND _CMPL_FLAGS -Werror -Wfatal-errors)
+  list(APPEND _CMPL_FLAGS -Werror)
+  # list(APPEND _CMPL_FLAGS -Wfatal-errors)
+
   # list(APPEND _CMPL_FLAGS -fsanitize=address,leak,undefined)
 endif()
 
